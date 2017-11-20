@@ -1,3 +1,3 @@
 # SeckillWeb
 
-Spring+SpringMVC+MyBatis构建的秒杀系统
+Spring+SpringMVC+MyBatis鏋勫缓鐨勭鏉�绯荤粺
