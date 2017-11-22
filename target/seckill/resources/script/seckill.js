@@ -25,7 +25,7 @@ var seckill = {
     handleSeckillKill: function (seckillId, node) {
         //处理秒杀逻辑 获取秒杀地址，控制显示逻辑
         node.hide()
-            .html("<button class='btn btn-primary btn-lg' id='killBtn'>开始秒杀</button>>");
+            .html("<button class='btn btn-primary btn-lg' id='killBtn'>开始秒杀</button>");
         $.post(seckill.URL.exposer(seckillId), {}, function (result) {
             //在回调函数中，执行交互流程
             if(result&&result['success'])
@@ -128,7 +128,8 @@ var seckill = {
             //已经登陆
             //计时
             $.get(seckill.URL.now(), {}, function (result) {
-                if (result && result['success']) {
+                if (result && result['success'])
+                {
                     var nowTime = result['data'];
                     seckill.countdown(seckillId, nowTime, startTime, endTime);
                 } else {

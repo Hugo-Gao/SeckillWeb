@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface SeckillDao
@@ -30,9 +31,16 @@ public interface SeckillDao
 
     /**
      * 根据偏移量查询秒杀列表
+     *
      * @param offset
      * @param limit
      * @return
      */
-    List<Seckill> queryAll(@Param("offset") int offset,@Param("limit") int limit);
+    List<Seckill> queryAll(@Param("offset") int offset, @Param("limit") int limit);
+
+    /**
+     * 使用存储过程执行秒杀
+     * @param paramMap
+     */
+    void killByProcedure(Map<String, Object> paramMap);
 }
